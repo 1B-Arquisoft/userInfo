@@ -13,6 +13,10 @@ module.exports = function checkAuth(action) {
         auth.check.own(req, owner)
         next();
         break;
+      case 'isLoggedIn':
+        auth.check.logged(req, owner)
+        next();
+        break;
       default:
         next();
     }
