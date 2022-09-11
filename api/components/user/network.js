@@ -7,8 +7,8 @@ const response = require('../../../network/response')
 
 router.get('/', list);
 router.get('/:id', get);
-router.post('/', upsert);
-router.put('/', secure('update'), upsert);
+router.put('/', secure('update'), update);
+router.post('/', insert);
 
 function list(req, res) {
   Controller.list()
@@ -32,9 +32,18 @@ function get(req, res) {
 
 };
 
-function upsert(req, res) {
-  console.log("bodyyy", req.body)
-  Controller.upsert(req.body)
+function insert(req, res) {
+  Controller.insert(req.body)
+    .then((user) => {
+      response.success(req, res, user, 201);
+    })
+    .catch((err) => {
+      response.error(req, res, err.message, 500);
+    });
+}
+
+function update(req, res) {
+  Controller.update(req.body)
     .then((user) => {
       response.success(req, res, user, 201);
     })

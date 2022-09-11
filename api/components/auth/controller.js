@@ -6,7 +6,7 @@ const TABLA = 'auth';
 module.exports = function (injectedStore) {
   let store = injectedStore || require('../../../store/dummy');
 
-  async function upsert(data) {
+  async function insert(data) {
     const authData = {
       id: data.id,
     }
@@ -16,7 +16,18 @@ module.exports = function (injectedStore) {
     if (data.password) {
       authData.password = await bcrypt.hash(data.password, 5);
     }
-    return store.upsert(TABLA, authData);
+    return store.insert(TABLA, authData);
+  }
+  async function update(data) {
+    const authData = {}
+    id = data.id;
+    if (data.username) {
+      authData.username = data.username;
+    }
+    if (data.password) {
+      authData.password = await bcrypt.hash(data.password, 5);
+    }
+    return store.update(TABLA, authData, id);
   }
 
   async function login(username, password) {
@@ -31,7 +42,8 @@ module.exports = function (injectedStore) {
       });
   }
   return {
-    upsert,
+    update,
+    insert,
     login,
   };
 } 

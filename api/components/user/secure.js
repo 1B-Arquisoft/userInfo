@@ -7,8 +7,9 @@ module.exports = function checkAuth(action) {
 
   function middleware(req, res, next) {
     switch (action) {
+      //only owner of an account can edit information
       case 'update':
-        const owner = req.body.id;
+        const owner = req.body;
         auth.check.own(req, owner)
         next();
         break;

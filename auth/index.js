@@ -39,6 +39,8 @@ const check = {
   own: function (req, owner) {
     const decoded = decodeHeader(req);
     //comprobar si es un token propio
+    console.log("decoded", decoded);
+    console.log("owner", owner);
     if (decoded.id !== owner.id) {
       throw new Error('Unauthorized');
     }
