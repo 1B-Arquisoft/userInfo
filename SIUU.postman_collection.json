@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "5c657b1d-239e-4d36-8f46-e7a3297eb528",
+		"name": "SIUU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12794551"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "juanito",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "juanito",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "juanito",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "juanito",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "juanito",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImtEMHJQXy0yQXItZjdzOVY5ajVKdCIsInVzZXJuYW1lIjoianVhbml0byIsInBhc3N3b3JkIjoiJDJiJDA1JGZiZ0RGWXRxLmF5ampLR1lSb05OWnVNTVRELzI1bExBUEJIei54eGlwb29CZHFBeUdXQ2NlIiwiaWF0IjoxNjYyOTQ0NTExfQ.-SbqpxTCChlZ22sIzFozcUcFbW9QWlOIwvqC1pIsyn8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "kD0rP_-2Ar-f7s9V9j5Jt",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "nuevoNombre",
+							"type": "text"
+						},
+						{
+							"key": "rol",
+							"value": "profesor",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listUsesrs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IklLc0gyZ3J5eTBEY19qNXJadUhVeiIsInVzZXJuYW1lIjoiY2FybG9zIiwicGFzc3dvcmQiOiIkMmIkMDUkblV5L1dFeUNOTjdYV2dVdFQvLnZCT0hyZnJwM25IRzAxVWlCc2hCZmQ2dnRwUVJpdnBzd3kiLCJpYXQiOjE2NjI4NTUxODB9.C_rbjaZl3qrMMcIbdchViFqc3B_1Du9NzhfMhizbi_s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "IKsH2gryy0Dc_j5rZuHUz",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Perezz",
+							"type": "text"
+						},
+						{
+							"key": "rol",
+							"value": "teacher",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "danperezma",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "daniel",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
