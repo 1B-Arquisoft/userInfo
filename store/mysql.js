@@ -31,7 +31,7 @@ function handleCon() {
       handleCon();
     }
     else {
-      throw new Error('[ERROR] CONECTION LOST');
+      throw new Error('[ERROR] CONECTION LOST', err.message);
     }
   });
 }
