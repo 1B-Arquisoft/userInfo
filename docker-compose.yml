@@ -27,7 +27,7 @@ services:
       - MYSQL_DB=USER_INFORMATION
       - MYSQL_USER=grupo1b
       - MYSQL_PASSWORD=cristianoronaldo
-      - MYSQL_HOST=mysqldb
+      - MYSQL_HOST=user_information_db
       - MYSQL_PORT=3306
     depends_on:
       - user_information_db
