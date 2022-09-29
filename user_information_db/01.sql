@@ -1,3 +1,4 @@
+CREATE TABLE if not exists USER_INFORMATION;
 CREATE TABLE auth (
 	id varchar(100) NOT NULL,
 	username varchar(100) NOT NULL,
