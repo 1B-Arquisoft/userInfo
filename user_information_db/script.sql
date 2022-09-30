@@ -1,6 +1,5 @@
 CREATE DATABASE if not exists USER_INFORMATION;
 USE USER_INFORMATION;
-USE USER_INFORMATION;
 CREATE TABLE auth (
 	id varchar(100) NOT NULL,
 	username varchar(100) NOT NULL,
@@ -9,7 +8,7 @@ CREATE TABLE auth (
 );
 CREATE TABLE user (
 	id varchar(100) NOT NULL,
-	username varchar(100) NOT NULL,
+	username varchar(100) NOT NULL UNIQUE,
 	name varchar(100) NOT NULL,
 	rol varchar(100) NOT NULL DEFAULT 'student',
 	email varchar(100) NOT NULL DEFAULT 'new_student@gmail.com',
