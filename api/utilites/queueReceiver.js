@@ -1,3 +1,4 @@
+const Controller = require('./index');
 var amqp = require('amqplib/callback_api');
 
 const host = process.env.MQHOST || "127.0.0.1";
@@ -7,6 +8,7 @@ const pass = process.env.MQPASS || null;
 const userInfo = user ? `${user}:${pass}@` : "";
 const queue = process.env.MQQUEUE || "message_queue";
 const url = `amqp://${userInfo}${host}:${port}`;
+
 
 const receiveMessage = () => {
 
@@ -28,6 +30,13 @@ const receiveMessage = () => {
 
       channel.consume(queue, function (msg) {
         console.log(" [x] Received!!! %s", msg.content.toString());
+        Controller.insert(msg.data)
+          .then((user) => {
+            console.log("create user", user)
+          })
+          .catch((err) => {
+            console.log("errorr", err)
+          });
       }, {
         noAck: true
       });
