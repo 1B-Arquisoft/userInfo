@@ -10,6 +10,7 @@ const url = `amqp://${userInfo}${host}:${port}`;
 
 const receiveMessage = () => {
 
+  console.log(queue)
   amqp.connect(url, function (error0, connection) {
     if (error0) {
       throw error0;
@@ -20,7 +21,7 @@ const receiveMessage = () => {
       }
 
       channel.assertQueue(queue, {
-        durable: false
+        durable: true
       });
 
       console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", queue);
