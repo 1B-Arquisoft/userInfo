@@ -13,6 +13,10 @@ module.exports = function (injectedStore) {
     return store.get(TABLA, id);
   }
 
+  async function getByUsername(username) {
+    return store.getByUsername(TABLA, username);
+  }
+
   async function update(body) {
     let new_user = body
     const id = body.id;
@@ -45,5 +49,6 @@ module.exports = function (injectedStore) {
     get,
     insert,
     update,
+    getByUsername
   };
 } 

@@ -33,7 +33,7 @@ function get(req, res) {
 
 };
 
-function get(req, res) {
+function getByUsername(req, res) {
   Controller.getByUsername(req.params.id)
     .then((user) => {
       response.success(req, res, user, 200);
