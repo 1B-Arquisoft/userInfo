@@ -1,4 +1,4 @@
-const Controller = require('./index');
+const Controller = require('../components/user/controller');
 var amqp = require('amqplib/callback_api');
 
 const host = process.env.MQHOST || "127.0.0.1";
