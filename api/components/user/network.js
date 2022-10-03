@@ -7,7 +7,7 @@ const response = require('../../../network/response')
 
 router.get('/', list);
 router.get('/:id', get);
-router.get('/getByUsername/:username', getByUsername);
+router.get('/username/:username', getByUsername);
 router.put('/', secure('update'), update);
 router.post('/', insert);
 
@@ -34,7 +34,7 @@ function get(req, res) {
 };
 
 function getByUsername(req, res) {
-  Controller.getByUsername(req.params.id)
+  Controller.getByUsername(req.params.username)
     .then((user) => {
       response.success(req, res, user, 200);
     })

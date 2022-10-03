@@ -1,4 +1,4 @@
-const Controller = require('../components/user/controller');
+const Controller = require('../components/user/index');
 var amqp = require('amqplib/callback_api');
 
 const host = process.env.MQHOST || "127.0.0.1";
@@ -30,7 +30,8 @@ const receiveMessage = () => {
 
       channel.consume(queue, function (msg) {
         console.log(" [x] Received!!! %s", msg.content.toString());
-        Controller.insert(msg.data)
+        const data = JSON.parse(msg.content.toString()).data;
+        Controller.insert(data)
           .then((user) => {
             console.log("create user", user)
           })
