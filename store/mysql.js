@@ -57,7 +57,7 @@ function get(table, id) {
   })
 }
 
-function get(table, username) {
+function getByUsername(table, username) {
   return new Promise((resolve, reject) => {
     connection.query(`SELECT * FROM ${table} WHERE username= ?`, username, (err, data) => {
       if (err) return reject(err);
