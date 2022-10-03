@@ -57,6 +57,15 @@ function get(table, id) {
   })
 }
 
+function get(table, username) {
+  return new Promise((resolve, reject) => {
+    connection.query(`SELECT * FROM ${table} WHERE username= ?`, username, (err, data) => {
+      if (err) return reject(err);
+      resolve(data);
+    })
+  })
+}
+
 function insert(table, data) {
   return new Promise((resolve, reject) => {
     connection.query(`INSERT INTO ${table} SET ?`, data, (err, result) => {
