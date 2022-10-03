@@ -5,8 +5,9 @@ const user = require('./components/user/network')
 const auth = require('./components/auth/network')
 const bodyParser = require('body-parser')
 const errors = require('../network/errors');
-const { receiveMessage } = require('./utilites/queueReceiver')
 
+//Import rabbitmq and receiveMessages
+const { receiveMessage } = require('./utilites/queueReceiver')
 receiveMessage();
 
 

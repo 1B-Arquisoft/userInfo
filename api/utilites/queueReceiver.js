@@ -1,9 +1,16 @@
 var amqp = require('amqplib/callback_api');
 
+const host = process.env.MQHOST || "127.0.0.1";
+const port = process.env.MQPORT || 5672;
+const user = process.env.MQUSER || null;
+const pass = process.env.MQPASS || null;
+const userInfo = user ? `${user}:${pass}@` : "";
+const queue = process.env.MQQUEUE || "message_queue";
+const url = `amqp://${userInfo}${host}:${port}`;
 
 const receiveMessage = () => {
 
-  amqp.connect('amqp://localhost', function (error0, connection) {
+  amqp.connect(url, function (error0, connection) {
     if (error0) {
       throw error0;
     }
@@ -11,8 +18,6 @@ const receiveMessage = () => {
       if (error1) {
         throw error1;
       }
-
-      var queue = 'hello';
 
       channel.assertQueue(queue, {
         durable: false
