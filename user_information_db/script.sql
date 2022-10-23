@@ -21,7 +21,7 @@ CREATE TABLE user (
 );
 
 INSERT INTO auth (id, username, password) VALUES('1192922977', 'lceballosa', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
-INSERT INTO auth (id, username, password) VALUES('1000234543', 'nvalderramas', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
+INSERT INTO auth (id, username, password) VALUES('1000234543', 'nivalderramas', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
 INSERT INTO auth (id, username, password) VALUES('11023456765', 'danperez', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
 INSERT INTO auth (id, username, password) VALUES('10034235353', 'juromerop', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
 INSERT INTO auth (id, username, password) VALUES('1023456234', 'dasilvaca', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
