@@ -20,12 +20,12 @@ CREATE TABLE user (
 	FOREIGN KEY (id) REFERENCES auth(id)
 );
 
-INSERT INTO auth (id, username, password) VALUES('1192922977', 'lceballosa', 'script1');
-INSERT INTO auth (id, username, password) VALUES('1000234543', 'nvalderramas', 'script2');
-INSERT INTO auth (id, username, password) VALUES('11023456765', 'danperez', 'script3');
-INSERT INTO auth (id, username, password) VALUES('10034235353', 'juromerop', 'script4');
-INSERT INTO auth (id, username, password) VALUES('1023456234', 'dasilvaca', 'script5');
-INSERT INTO auth (id, username, password) VALUES('1023432432', 'rdguarnizo', 'script6');
+INSERT INTO auth (id, username, password) VALUES('1192922977', 'lceballosa', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
+INSERT INTO auth (id, username, password) VALUES('1000234543', 'nvalderramas', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
+INSERT INTO auth (id, username, password) VALUES('11023456765', 'danperez', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
+INSERT INTO auth (id, username, password) VALUES('10034235353', 'juromerop', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
+INSERT INTO auth (id, username, password) VALUES('1023456234', 'dasilvaca', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
+INSERT INTO auth (id, username, password) VALUES('1023432432', 'rdguarnizo', '$2b$05$gQwVmgO2euIRuxXj7dM0duNr4FoR2/S33ElhT0pkLc5FX7xUkqxhi');
 
 
 INSERT INTO `user` (id, username, name, rol, email, institution_email, address, cellphone_number, born_date) VALUES('1192922977', 'lceballosa', 'Laura Valentina Ceballos Aguilar', 'student', 'lau.ceballos00@gmail.com', 'lceballosa@unal.edu.co', 'calle 23d 45 67', '3002956655', '2000-05-30');
