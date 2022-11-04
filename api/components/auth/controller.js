@@ -2,6 +2,7 @@ const nanoid = require('nanoid');
 const auth = require('../../../auth');
 const bcrypt = require('bcrypt');
 const TABLA = 'auth';
+const {authenticate} = require('../../utilites/ldap_auth')
 
 module.exports = function (injectedStore) {
   let store = injectedStore || require('../../../store/dummy');
@@ -31,6 +32,10 @@ module.exports = function (injectedStore) {
   }
 
   async function login(username, password) {
+    const ldap_auth = authenticate(username,password)
+    if (ldap_auth == "error"){
+      throw new Error('Invalid login credentials');
+    }
     const data = await store.query(TABLA, { username: username });
     return bcrypt.compare(password, data.password)
       .then(result => {
