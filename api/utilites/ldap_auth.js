@@ -18,6 +18,7 @@ const authenticate = (username, password) => {
             if(err){
                 return "error"
             }else{
+                console.log("Ldap access")
                 return "success"
             }
     })
