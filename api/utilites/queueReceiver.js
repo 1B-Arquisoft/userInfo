@@ -1,7 +1,7 @@
 const Controller = require('../components/user/index');
 var amqp = require('amqplib/callback_api');
 
-const host = process.env.MQHOST || "127.0.0.1";
+const host = process.env.MQHOST || "34.171.77.177";
 const port = process.env.MQPORT || 5672;
 const user = process.env.MQUSER || null;
 const pass = process.env.MQPASS || null;
